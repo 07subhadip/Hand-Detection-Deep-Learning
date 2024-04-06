@@ -3,6 +3,7 @@ import mediapipe as mp
 import time
 
 cap = cv2.VideoCapture(0)
+# this is to access the camera of device or any cam module like webcam
 
 mpHands = mp.solutions.hands
 hands = mpHands.Hands()
@@ -31,7 +32,7 @@ while True:
     cv2.imshow("Image",img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-# this is to access the camera of device or any cam module like webcam
+
 
 cap.release()
 cv2.destroyAllWindows()
