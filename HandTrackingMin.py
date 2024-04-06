@@ -20,6 +20,15 @@ while True:
 
     if result.multi_hand_landmarks:
         for handLMS in result.multi_hand_landmarks:
+            for id, lm in enumerate(handLMS.landmark):
+                #print(id, lm)                           # upto this we will get the co-ordinate values
+                h, w, c = img.shape
+                cx, cy = int(lm.x*w) , int(lm.y*h)
+                print(id,cx,cy)
+
+                if id == 0: # if remove the condition it will apply for all finger tips
+                    cv2.circle(img,(cx,cy),10,(255,10,255),cv2.FILLED)
+
             mpDraw.draw_landmarks(img, handLMS , mpHands.HAND_CONNECTIONS)
     
     cTime = time.time()
