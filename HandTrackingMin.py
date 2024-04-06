@@ -15,6 +15,8 @@ cTime = 0
 while True:
     success , img = cap.read()
     imgRGB = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+    # cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)  # Example resolution
+    # cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
     result = hands.process(imgRGB)
     #print(result.multi_hand_landmarks)
 
