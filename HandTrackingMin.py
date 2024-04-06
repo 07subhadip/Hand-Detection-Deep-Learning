@@ -8,3 +8,4 @@ while True:
     success , img = cap.read()
     cv2.imshow("Image",img)
     cv2.waitKey(1)
+# this is to access the camera of device or any cam module like webcam
